@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h1 id="output">Answer</h1>
+    <script>
+      let text = prompt("Enter text");
+      let alphaSort = (str) =>
+        str
+          .split("")
+          .map((char) => String.fromCharCode(char.charCodeAt(0) + 1))
+          .join("");
+
+      document.getElementById("output").innerHTML = alphaSort(text);
+    </script>
+  </body>
+</html>

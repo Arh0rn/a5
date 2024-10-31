@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h1 id="output">Answer</h1>
+    <script>
+      let a = parseInt(prompt("Enter number 1"));
+      let b = parseInt(prompt("Enter number 2"));
+      let c = parseInt(prompt("Enter number 3"));
+
+      let num_dist = [
+        [a, Math.abs(a - 100)],
+        [b, Math.abs(b - 100)],
+        [c, Math.abs(a - 100)],
+      ];
+
+      let near = num_dist.reduce(
+        (min, arr) => (arr[1] < min[1] ? arr : min),
+        num_dist[0]
+      );
+      let far = num_dist.reduce(
+        (max, arr) => (arr[1] > max[1] ? arr : max),
+        num_dist[0]
+      );
+      document.getElementById("output").innerHTML = `Near ${int(
+        near
+      )} Far ${int(far)}`;
+    </script>
+  </body>
+</html>

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <title>🪨, ✂️, 📃</title>
+  </head>
+  <body>
+    <h2>Игра 🪨, ✂️, 📃</h2>
+    <button onclick="play('🪨')">🪨</button>
+    <button onclick="play('✂️')">✂️</button>
+    <button onclick="play('📃')">📃</button>
+    <p id="result"></p>
+
+    <script>
+      function play(userChoice) {
+        const choices = ["🪨", "✂️", "📃"];
+        const computerChoice = choices[Math.floor(Math.random() * 3)];
+        let result;
+        if (userChoice === computerChoice) result = "Draw!";
+        else if (
+          (userChoice === "📃" && computerChoice === "✂️") ||
+          (userChoice === "✂️" && computerChoice === "📃") ||
+          (userChoice === "📃" && computerChoice === "🪨")
+        )
+          result = `You win, computiere choise: ${computerChoice}`;
+        else result = `You lose ${computerChoice}`;
+        document.getElementById("result").innerText = result;
+      }
+    </script>
+  </body>
+</html>

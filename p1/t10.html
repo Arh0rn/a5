@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <p>
+      Lorem? ipsum dolory sit, yamet aconsectetur adipisicing elit. Sequi
+      repellendus voluptatem dolorem illo, veritatis non quae iusto eaque
+      officiis ipsa, id sed nesciunt, magnam eum amet ipsam. Asperiores, dicta
+      unde!
+    </p>
+    <h1 id="output">Answer</h1>
+    <script>
+      const par = document.querySelector("p");
+      par.innerHTML = par.innerHTML
+        .split(" ")
+        .map((word) => {
+          if (word.startsWith("a")) {
+            return `<i>${word}</i>`;
+          } else if (word.endsWith("y")) {
+            return `<u>${word}</u>`;
+          }
+          return word;
+        })
+        .join(" ");
+    </script>
+  </body>
+</html>

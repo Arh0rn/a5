@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h1 id="output">Answer</h1>
+    <script>
+      let t1 = prompt("Enter text");
+      let t2 = prompt("Enter text");
+      let t3 = prompt("Enter text");
+      let arr = [t1, t2, t3];
+      let alphaSort = (arr) =>
+        arr.sort((a, b) => (a.length > b.length ? 1 : -1));
+      let min = alphaSort(arr)[0];
+      let max = alphaSort(arr)[2];
+      document.getElementById("output").innerHTML = `${min} ${max}`;
+    </script>
+  </body>
+</html>
